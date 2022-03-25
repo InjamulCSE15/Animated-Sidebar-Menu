@@ -34,6 +34,15 @@ nav {
     color: #fff;
 }
 
+nav::before {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 100%;
+    top: 0;
+    left: 100%;
+}
+
 .sidebar-top .logo {
     width: 2.1rem;
 }
@@ -54,11 +63,24 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     right: -2.65rem;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ;
 }
 
 .shrink-btn i {
-    
+    line-height: 27px;
+}
+
+.shrink-btn:hover {
+    background-color: var(--mainColorDark);
+}
+
+nav:hover .shrink-btn {
+    transform: translateY(-50%) translateX(0px);
+    opacity: 1;
+    pointer-events: all;
 }
 
 main {
