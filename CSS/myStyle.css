@@ -46,6 +46,13 @@ nav::before {
 
 .sidebar-top .logo {
     width: 2.1rem;
+    margin: 0 0.8rem;
+}
+
+.sidebar-top h3 {
+    padding-left: 0.5rem;
+    font-weight: 600;
+    font-size: 1.15rem;
 }
 
 .sidebar-top {
@@ -72,13 +79,15 @@ nav::before {
 
 .shrink-btn i {
     line-height: 27px;
+    transition: 0.3s;
 }
 
 .shrink-btn:hover {
     background-color: var(--mainColorDark);
 }
 
-nav:hover .shrink-btn, .shrink-btn:hovered {
+nav:hover .shrink-btn, 
+.shrink-btn.hovered {
     transform: translateY(-50%) translateX(0px);
     opacity: 1;
     pointer-events: all;
@@ -109,6 +118,20 @@ main .copyright span {
 
 /* When the menu shrinks */
 
+.hide {
+    transition: opacity 0.3s 0.2s;
+}
+
 body.shrink nav {
     width: 5.4rem;
+}
+
+body.shrink .hide {
+    opacity: 0;
+    pointer-events: none;
+    transition-delay: 0s;
+}
+
+body.shrink .shrink-btn i {
+    transform: rotate(-180deg);
 }

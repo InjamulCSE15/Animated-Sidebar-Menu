@@ -5,4 +5,11 @@ const shrinkBtn = document.querySelector(".shrink-btn");
 shrinkBtn.addEventListener("click", () => {
    // console.log("Button Clicked");
    document.body.classList.toggle("shrink");
+   shrinkBtn.classList.add("hovered");
+
+   setTimeout(
+       () => {
+        shrinkBtn.classList.remove("hovered");
+       }, 500);
+
 })
