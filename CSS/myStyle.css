@@ -40,6 +40,25 @@ nav {
 
 .sidebar-top {
     display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.shrink-btn {
+    position: absolute;
+    top: 50%;
+    height: 27px;
+    padding: 0 0.3rem;
+    background-color: var(--mainColor);
+    box-shadow: 0 3px 10px -3px rgba(70, 46, 118, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    right: -2.65rem;
+    transform: translateY(-50%);
+}
+
+.shrink-btn i {
+    
 }
 
 main {
