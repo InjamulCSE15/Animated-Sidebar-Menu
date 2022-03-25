@@ -113,6 +113,11 @@ nav:hover .shrink-btn,
     color: white;
     caret-color: white;
     outline: none;
+    font-family: inherit;
+}
+
+.search input::placeholder {
+    color: var(--textColor);
 }
 
 /* ===== Main Section ===== */
