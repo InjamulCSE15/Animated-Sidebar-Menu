@@ -120,6 +120,64 @@ nav:hover .shrink-btn,
     color: var(--textColor);
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.sidebar-links li {
+    padding: 2.5px 0;
+}
+
+.sidebar-links a {
+    color: var(--textColor);
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    height: 53px;
+}
+
+.icon {
+    min-width: 3.7rem;
+    font-size: 1.3rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.icon i {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transition: 0.3s;
+}
+
+.icon i:last-child {
+    opacity: 0;
+    color: #fff;
+}
+
+.sidebar-links a.active,
+.sidebar-links a:hover {
+    color: #fff;
+}
+
+.sidebar-links a .link {
+    transition: color 0.3s;
+}
+
+.sidebar-links a.active i:first-child {
+    opacity: 0;
+}
+
+.sidebar-links a.active i:last-child {
+    opacity: 1;
+}
+
 /* ===== Main Section ===== */
 
 main {
