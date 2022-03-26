@@ -31,9 +31,11 @@
     
         <div class="sidebar-links">
             <ul>
+                <div class="active-tab"></div>
+
                 <!-- Dashboard -->
                 <li>
-                    <a href="#" class="active">
+                    <a href="#" class="active" data-active="0">
                         <div class="icon">
                             <i class='bx bx-tachometer'></i>
                             <i class='bx bxs-tachometer' ></i>
@@ -43,7 +45,7 @@
                 </li>
                 <!-- Projects -->
                 <li>
-                    <a href="#">
+                    <a href="#" data-active="1">
                         <div class="icon">
                             <i class='bx bx-folder'></i>
                             <i class='bx bxs-folder' ></i>
@@ -51,24 +53,24 @@
                         <span class="link">Projects</span>
                     </a>
                 </li>
-                <!-- Analytics -->
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class='bx bx-bar-chart-square'></i>
-                            <i class='bx bxs-bar-chart-square' ></i>
-                        </div>
-                        <span class="link">Analytics</span>
-                    </a>
-                </li>
                 <!-- Messages -->
                 <li>
-                    <a href="#">
+                    <a href="#" data-active="2">
                         <div class="icon">
                             <i class='bx bx-message-square-detail'></i>
                             <i class='bx bxs-message-square-detail' ></i>
                         </div>
                         <span class="link">Messages</span>
+                    </a>
+                </li>
+                <!-- Analytics -->
+                <li>
+                    <a href="#" data-active="3">
+                        <div class="icon">
+                            <i class='bx bx-bar-chart-square'></i>
+                            <i class='bx bxs-bar-chart-square' ></i>
+                        </div>
+                        <span class="link">Analytics</span>
                     </a>
                 </li>
             </ul>
