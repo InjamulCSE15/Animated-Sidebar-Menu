@@ -172,7 +172,7 @@ ul {
 }
 
 .sidebar-links a .link {
-    transition: color 0.3s;
+    transition: opacity 0.3s 0.2s, color 0.3s;
 }
 
 .sidebar-links a.active i:first-child {
@@ -191,6 +191,7 @@ ul {
     position: absolute;
     top: 2.5px;
     left: 0;
+    transition: top 0.3s;
 }
 
 /* ===== Main Section ===== */
