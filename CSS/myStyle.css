@@ -194,6 +194,18 @@ ul {
     transition: top 0.3s;
 }
 
+.sidebar-links h4 {
+    position: relative;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0 0.8rem;
+    color: var(--textColor);
+    letter-spacing: 0.5px;
+    height: 45px;
+    line-height: 45px;
+}
+
 /* ===== Main Section ===== */
 
 main {
