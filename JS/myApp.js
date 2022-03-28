@@ -4,7 +4,7 @@ const shrinkBtn = document.querySelector(".shrink-btn");
 const search = document.querySelector(".search");
 const sidebarLinks = document.querySelectorAll(".sidebar-links a");
 const activeTab = document.querySelector(".active-tab");
-const shortCuts = document.querySelector
+const shortCuts = document.querySelector(".sidebar-links h4");
 
 
 let activeIndex;
@@ -12,6 +12,7 @@ let activeIndex;
 shrinkBtn.addEventListener("click", () => {
    // console.log("Button Clicked");
    document.body.classList.toggle("shrink");
+   setTimeout(moveActiveTab, 400);
    shrinkBtn.classList.add("hovered");
 
    setTimeout(
@@ -27,6 +28,11 @@ search.addEventListener("click", () => {
 
 function moveActiveTab() {
     let topPosition = activeIndex * 58 + 2.5;
+
+    if (activeIndex > 3) {
+        topPosition += shortCuts.clientHeight;
+    }
+
     activeTab.style.top = `${topPosition}px`;
 }
 
