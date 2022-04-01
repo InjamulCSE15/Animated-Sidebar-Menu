@@ -26,6 +26,8 @@ body {
 /* ===== Nav Section ===== */
 nav {
     position: sticky;
+    display: flex;
+    flex-direction: column;
     background-color: var(--mainColor);
     width: 16rem;
     top: 0;
@@ -206,6 +208,38 @@ ul {
     height: 45px;
     line-height: 45px;
     transition: opacity 0.3s 0.2s, height 0.5s 0s;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--textColor);
+    height: 53px;
+    width: 3.7rem;
+    transition: color 0.3s;
+}
+
+.account:hover {
+    color: #fff;
+}
+
+.admin-user {
+    display: flex;
+    align-items: center;
+}
+
+.admin-profile {
+    display: flex;
+}
+
+.admin-user img {
+    width: 45px;
 }
 
 /* ===== Main Section ===== */
