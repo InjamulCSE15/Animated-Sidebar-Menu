@@ -32,7 +32,8 @@ nav {
     width: 16rem;
     top: 0;
     left: 0;
-    height: 100vh;
+    /* height: 100vh; */
+    height: 100%;
     padding: 1.8rem .85rem;
     color: #fff;
     transition: width 0.5s ease-in-out;
@@ -222,7 +223,9 @@ ul {
     color: var(--textColor);
     height: 53px;
     width: 3.7rem;
-    transition: color 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s 0s, color 0.3s 0s;
 }
 
 .account:hover {
@@ -236,10 +239,54 @@ ul {
 
 .admin-profile {
     display: flex;
+    white-space: nowrap;
+    max-width: 100%;
+    transition: opacity 0.3s 0.2s, max-width 0.7s 0s ease-in-out;
+    align-items: center;
+    flex: 1;
+    overflow: hidden;
 }
 
 .admin-user img {
-    width: 45px;
+    width: 2.9rem;
+    border-radius: 50%;
+    margin: 0 0.4rem;
+}
+
+.admin-info {
+    padding-left: 0.3rem;
+}
+
+.admin-info h3 {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.admin-info h5 {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--textColor);
+    margin-top: 0.3rem;
+    line-height: 1;
+}
+
+.log-out {
+    display: flex;
+    height: 40px;
+    min-width: 2.4rem;
+    background-color: var(--mainColorDark);
+    color: var(--textColor);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    margin: 0 0.65rem;
+    transition: color 0.3s;
+}
+
+.log-out:hover {
+    color: #fff;
 }
 
 /* ===== Main Section ===== */
@@ -289,4 +336,15 @@ body.shrink .shrink-btn i {
 
 body.shrink .sidebar-links h4 {
     height: 10px;
+}
+
+body.shrink .account {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.3s 0.3s, color 0.3s 0s ;
+}
+
+body.shrink .admin-profile {
+    max-width: 0;
+    transition: opacity 0.3s 0s, max-width 0.7s 0s ease-in-out;
 }
