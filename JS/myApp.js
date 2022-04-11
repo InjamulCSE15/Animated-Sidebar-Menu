@@ -5,6 +5,7 @@ const search = document.querySelector(".search");
 const sidebarLinks = document.querySelectorAll(".sidebar-links a");
 const activeTab = document.querySelector(".active-tab");
 const shortCuts = document.querySelector(".sidebar-links h4");
+const tooltipElements = document.querySelectorAll(".tooltip-element");
 
 
 let activeIndex;
@@ -50,3 +51,20 @@ function changeLink() {
 sidebarLinks.forEach(link => link.addEventListener
     ("click", changeLink)
     );
+
+function showTooltip() {
+   // console.log("here is tooltip");
+
+    let tooltip = this.parentNode.lastElementChild;
+   // console.log(tooltip);
+
+   let spans = tooltip.children;
+   // console.log(spans);
+
+   let tooltipIndex = this.dataset.tooltip;
+   console.log(tooltipIndex);
+}
+
+tooltipElements.forEach(elem => {
+    elem.addEventListener("mouseover", showTooltip);
+})

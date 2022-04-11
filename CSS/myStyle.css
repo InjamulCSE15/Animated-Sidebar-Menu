@@ -289,6 +289,42 @@ ul {
     color: #fff;
 }
 
+.tooltip {
+    background-color: var(--mainColor);
+    position: absolute;
+    right: -1.2rem;
+    top: 0;
+    transform: translateX(100%) translateY(-50%);
+    padding: 0 0.8rem;
+    font-size: 0.85rem;
+    display: none;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 30px;
+    align-items: center;
+    border-radius: 7px;
+    box-shadow: 0 3px 10px -3px rgba(70, 46, 118, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.tooltip span {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.tooltip span.show {
+    opacity: 1;
+}
+
+.tooltip-element:hover ~ .tooltip {
+    opacity: 1;
+    pointer-events: all;
+}
+
 /* ===== Main Section ===== */
 
 main {
@@ -347,4 +383,9 @@ body.shrink .account {
 body.shrink .admin-profile {
     max-width: 0;
     transition: opacity 0.3s 0s, max-width 0.7s 0s ease-in-out;
+}
+
+body.shrink .tooltip {
+    display: grid;
+   
 }
