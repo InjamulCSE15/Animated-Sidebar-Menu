@@ -1,70 +1,64 @@
-// console.log("JavaScript file added.");
-
-const shrinkBtn = document.querySelector(".shrink-btn");
+const shrink_btn = document.querySelector(".shrink-btn");
 const search = document.querySelector(".search");
-const sidebarLinks = document.querySelectorAll(".sidebar-links a");
-const activeTab = document.querySelector(".active-tab");
-const shortCuts = document.querySelector(".sidebar-links h4");
-const tooltipElements = document.querySelectorAll(".tooltip-element");
-
+const sidebar_links = document.querySelectorAll(".sidebar-links a");
+const active_tab = document.querySelector(".active-tab");
+const shortcuts = document.querySelector(".sidebar-links h4");
+const tooltip_elements = document.querySelectorAll(".tooltip-element");
 
 let activeIndex;
 
-shrinkBtn.addEventListener("click", () => {
-   // console.log("Button Clicked");
-   document.body.classList.toggle("shrink");
-   setTimeout(moveActiveTab, 400);
-   shrinkBtn.classList.add("hovered");
+shrink_btn.addEventListener("click", () => {
+  document.body.classList.toggle("shrink");
+  setTimeout(moveActiveTab, 400);
 
-   setTimeout(
-    () => {
-    shrinkBtn.classList.remove("hovered");
-    }, 500);
+  shrink_btn.classList.add("hovered");
+
+  setTimeout(() => {
+    shrink_btn.classList.remove("hovered");
+  }, 500);
 });
 
 search.addEventListener("click", () => {
-    document.body.classList.remove("shrink");
-    search.lastElementChild.focus();
+  document.body.classList.remove("shrink");
+  search.lastElementChild.focus();
 });
 
 function moveActiveTab() {
-    let topPosition = activeIndex * 58 + 2.5;
+  let topPosition = activeIndex * 58 + 2.5;
 
-    if (activeIndex > 3) {
-        topPosition += shortCuts.clientHeight;
-    }
+  if (activeIndex > 3) {
+    topPosition += shortcuts.clientHeight;
+  }
 
-    activeTab.style.top = `${topPosition}px`;
+  active_tab.style.top = `${topPosition}px`;
 }
 
 function changeLink() {
-    //console.log("hello function");
-    sidebarLinks.forEach(sideLink => sideLink.classList.remove("active"));
-    this.classList.add("active");
+  sidebar_links.forEach((sideLink) => sideLink.classList.remove("active"));
+  this.classList.add("active");
 
-    activeIndex = this.dataset.active;
-    //console.log(activeIndex);
+  activeIndex = this.dataset.active;
 
-    moveActiveTab();
+  moveActiveTab();
 }
 
-sidebarLinks.forEach(link => link.addEventListener
-    ("click", changeLink)
-    );
+sidebar_links.forEach((link) => link.addEventListener("click", changeLink));
 
 function showTooltip() {
-   // console.log("here is tooltip");
+  let tooltip = this.parentNode.lastElementChild;
+  // console.log(tooltip);
+  let spans = tooltip.children;
+  // console.log(spans);
+  let tooltipIndex = this.dataset.tooltip;
+  // console.log(tooltipIndex);
 
-    let tooltip = this.parentNode.lastElementChild;
-   // console.log(tooltip);
+  Array.from(spans).forEach((sp) => sp.classList.remove("show"));
+  // console.log(spans[tooltipIndex]);
+  spans[tooltipIndex].classList.add("show");
 
-   let spans = tooltip.children;
-   // console.log(spans);
-
-   let tooltipIndex = this.dataset.tooltip;
-   console.log(tooltipIndex);
+  tooltip.style.top = `${(100 / (spans.length * 2)) * (tooltipIndex * 2 + 1)}%`;
 }
 
-tooltipElements.forEach(elem => {
-    elem.addEventListener("mouseover", showTooltip);
-})
+tooltip_elements.forEach((elem) => {
+  elem.addEventListener("mouseover", showTooltip);
+});
